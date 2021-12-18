@@ -39,6 +39,7 @@ class AbsenController extends Controller
         if ($jarak > 20) {
             Debugbar::info('jauh');
             $request->session()->flash('lokasiJauh','Your location is too far from Girisa Teknologi!  ');
+            $request->session()->flash('jarak',$jarak);
             return view("absen.index");
         }
 

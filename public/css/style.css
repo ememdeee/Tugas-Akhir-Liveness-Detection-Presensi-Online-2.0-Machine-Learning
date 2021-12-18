@@ -29,7 +29,7 @@
   }
 
 .wrapper{
-  height:100vh;
+  height:400px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -41,8 +41,13 @@
   width:600px;
  }
 
-
-
+.absen{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 
 
 

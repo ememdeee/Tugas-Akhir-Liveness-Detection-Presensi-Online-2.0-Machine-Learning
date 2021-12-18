@@ -23,7 +23,7 @@
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
   </div>
 
-<h1>Ini akan jadi halaman perkenalan tentang web ini</h1>
-<h3>orang pertama kali datang kalau belum login akan ke sini</h3>
+<!-- <h1>Ini akan jadi halaman perkenalan tentang web ini</h1>
+<h3>orang pertama kali datang kalau belum login akan ke sini</h3> -->
 
 @endsection

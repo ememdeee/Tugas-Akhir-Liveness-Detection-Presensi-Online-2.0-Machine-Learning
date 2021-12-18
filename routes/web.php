@@ -58,3 +58,8 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth','role:admin']);
 Route::post('/dashboard', [DashboardController::class, 'pilihTanggal'])->middleware(['auth','role:admin']);
+
+//upload ke git hub atau update
+// git add .
+// git commit -m "First commit"
+// git push

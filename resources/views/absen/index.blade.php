@@ -39,20 +39,34 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    <div class="w-screen h-screen flex justify-center items-center flex-col">
-        <a href="/login">Login</a>
+    
+    <!-- @if (session()->has('jarak'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session ('jarak') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif -->
+
+    <!-- Mapdulu -->
+
+    <div class="wrapper">
+        <div id="render_map"> <h4> Map tidak tersedia, pastikan internet anda menyala.</h4></div>
+    </div>
+
+    <!-- barutombol -->
+
+    <div class="absen">
         <p class="text-red-500">hello ayo absen</p>
         <form action="/absen" method="post" id="form">
             @csrf
             <button class='bg-white text-yellow-50 p-3 rounded-md mx-auto ' @if($buttonDisabled) disabled @endif>{{ $textButton }}</button>
-            <input type="" name="lat" value="0" id="lat">
-            <input type="" name="lon" value="0" id="lon">
+            <div class="my-2">
+                <input type="" name="lat" value="0" id="lat">
+                <input type="" name="lon" value="0" id="lon">
+            </div>
         </form>
     </div>
     
-    <div class="wrapper">
-        <div id="render_map"> <h1> halo </h1></div>
-    </div>
 
     <script>
 
@@ -110,9 +124,28 @@
             Map.setView(new L.LatLng(DEFAULT_COORD[0], DEFAULT_COORD[1]), 17)
             Map.addLayer(osmTile)
 
-            //marker
-            const MarkerToko = L.marker(DEFAULT_COORD).addTo(Map)
-            const MarkerUser = L.marker(USER_COORD).addTo(Map)
+            //custom icon
+            var custom_icon;
+            custom_icon= L.icon({
+                iconUrl:'home.png',
+                iconSize: [20,20],
+                iconAnchor: [10,29],
+                popupAnchor: [0,-29]
+            });
+            
+            //direction
+            L.Routing.control({
+                waypoints: [
+                    L.latLng(DEFAULT_COORD[0],DEFAULT_COORD[1]),
+                    L.latLng(USER_COORD[0],USER_COORD[1])
+                    ],draggableWaypoints: false,
+                    routeWhileDragging: false
+                    }).addTo(Map);
+
+            //marker lama (no line)
+            // const MarkerToko = L.marker((DEFAULT_COORD),{icon:custom_icon}).addTo(Map) //icon berhasil
+            // const MarkerToko = L.marker(DEFAULT_COORD).addTo(Map)
+            // const MarkerUser = L.marker(USER_COORD).addTo(Map)
 
         }
 
