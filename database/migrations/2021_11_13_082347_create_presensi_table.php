@@ -15,7 +15,7 @@ class CreatePresensiTable extends Migration
     {
         Schema::create('presensi', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->foreignId('user_id')->constrained();
             // $table->timestamps();
             $table->timestamp('waktu_datang')->nullable();
             $table->timestamp('waktu_istirahat')->nullable();

@@ -63,6 +63,7 @@
             <div class="my-2">
                 <input type="" name="lat" value="0" id="lat">
                 <input type="" name="lon" value="0" id="lon">
+                <input type="" name="jarak" value="{{$jarak}}" id="jarak">
             </div>
         </form>
     </div>

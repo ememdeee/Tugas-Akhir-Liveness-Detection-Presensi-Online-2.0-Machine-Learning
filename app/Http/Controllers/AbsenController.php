@@ -40,7 +40,7 @@ class AbsenController extends Controller
             Debugbar::info('jauh');
             $request->session()->flash('lokasiJauh','Your location is too far from Girisa Teknologi!  ');
             $request->session()->flash('jarak',$jarak);
-            return view("absen.index");
+            return view("absen.index",['jarak' => $jarak]);
         }
 
         $presensi = Presensi::whereDate('waktu_datang',Carbon::today())->where('user_id',Auth::id())->first();
@@ -75,7 +75,7 @@ class AbsenController extends Controller
             $presensi->save();
 
             $request->session()->flash('absenMasuk','Happy Istirahat');
-            return view("absen.index");
+            return view("absen.index",['jarak' => $jarak]);
         }
 
         // cek apakah belom selesai istirahat
@@ -86,7 +86,7 @@ class AbsenController extends Controller
             $presensi->save();
 
             $request->session()->flash('absenMasuk','Happy work!');
-            return view("absen.index");
+            return view("absen.index",['jarak' => $jarak]);
         }
 
         // cek apakah belom pulang
@@ -97,7 +97,7 @@ class AbsenController extends Controller
             $presensi->save();
 
             $request->session()->flash('absenMasuk','ati ati dijalan!');
-            return view("absen.index");
+            return view("absen.index",['jarak' => $jarak]);
         }
 
         //jika sudah, abaikan
@@ -105,7 +105,7 @@ class AbsenController extends Controller
 
         $request->session()->flash('absenMasuk','Sudah absen woy');
 
-        return view('absen.index');
+        return view('absen.index',['jarak' => $jarak]);
     }
 
     private function hitungJarak($lokasiUser){
