@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dashboard2Controller;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AbsenController;
 
@@ -58,6 +59,8 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth','role:admin']);
 Route::post('/dashboard', [DashboardController::class, 'pilihTanggal'])->middleware(['auth','role:admin']);
+Route::get('/dashboard2', [Dashboard2Controller::class, 'index'])->middleware(['auth','role:admin']);
+Route::post('/dashboard2', [Dashboard2Controller::class, 'pilihUser'])->middleware(['auth','role:admin']);
 
 //upload ke git hub atau update
 // git add .

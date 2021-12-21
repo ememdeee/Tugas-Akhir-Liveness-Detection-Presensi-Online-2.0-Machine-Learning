@@ -110,7 +110,7 @@
 
             // buat map
              // Maps Leaflet
-            const DEFAULT_COORD =[-7.9359853260984465,112.62616865529099]
+            const DEFAULT_COORD =[{{App\Config::first()->lat}},{{App\Config::first()->lon}}]
             const USER_COORD =[lat1,lon1]
 
             const Map =L.map("render_map")

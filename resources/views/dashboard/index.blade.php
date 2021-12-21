@@ -39,25 +39,25 @@
                     {{$user->email}}
                 </td>
     
-                @if ($presensi !== null)
+                @if ($presensi && $presensi !== null)
                     <td class="text-success">{{ $presensi->waktu_datang->format('d F Y; H:m:s') }}</td>
                 @else
                     <td class="text-danger">Belum Absen</td>
                 @endif
     
-                @if ($presensi !== null)
+                @if ($presensi && $presensi->waktu_istirahat !== null)
                     <td class="text-success">{{ $presensi->waktu_istirahat->format('d F Y; H:m:s') }}</td>
                 @else
                     <td class="text-danger">Belum Istirahat</td>
                 @endif
     
-                @if ($presensi !== null)
+                @if ($presensi && $presensi->waktu_setelah_istirahat !== null)
                     <td class="text-success">{{ $presensi->waktu_setelah_istirahat->format('d F Y; H:m:s') }}</td>
                 @else
                     <td class="text-danger">Belum balik Istirahat</td>
                 @endif
     
-                @if ($presensi !== null)
+                @if ($presensi && $presensi->waktu_pulang !== null)
                     <td class="text-success">{{ $presensi->waktu_pulang->format('d F Y; H:m:s') }}</td>
                 @else
                     <td class="text-danger">Belum Pulang</td>
@@ -82,10 +82,12 @@
     </div>
     <div class="my-4">
         <label for="tanggal">Tanggal:</label>
-        <input type="date" id="tanggal" name="tanggal">
+        <input type="date" id="tanggal" name="tanggal" required>
         <input type="submit">
     </div>
 </form>
+
+<a href="/dashboard2"><button type="button" class="btn btn-secondary btn-lg">Advanced search</button></a>
 <!-- 
 <h1>hallo</h1> -->
 

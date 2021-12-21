@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Debugbar;
 use App\Presensi;
+use App\Config;
 use Carbon\Carbon;
 
 class AbsenController extends Controller
@@ -49,7 +50,7 @@ class AbsenController extends Controller
 
         // cek apakah belom absen
         if($presensi === null){
-            //jika belom absen berarti dia baru datang
+            //jika belom absen berarti dia baru datang, dan dibikinbaru
             $userId = Auth::id();
 
 
@@ -60,15 +61,14 @@ class AbsenController extends Controller
             $request->session()->flash('absenMasuk','Your attendance already submited');
         }
 
-        // cek apakah belom istirahat
+        // cek apakah kedatangan nya kosong, jika iya di isi.
         if ($presensi->waktu_datang === null){
             $presensi->waktu_datang= Carbon::now();
             $presensi->save();
 
-            return view("absen.index");
+            return view("absen.index",['jarak' => $jarak]);
         }
         else if($presensi->waktu_istirahat === null){
-            //jika belom absen berarti dia baru datang
 
             //update baris yang sudah ada bukan nambah baru
             $presensi->waktu_istirahat = Carbon::now();
@@ -110,8 +110,8 @@ class AbsenController extends Controller
 
     private function hitungJarak($lokasiUser){
         $lokasiKantor = collect([
-            'lat' => -7.9359853260984465, 
-            'lon' => 112.62616865529099,
+            'lat' => Config::first()->lat, 
+            'lon' => Config::first()->lon,
             // yang diatas punya girisa
             // 'lat' => -7.9526481,
             // 'lon' => 112.6079343,

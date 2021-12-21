@@ -1,0 +1,15 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Config extends Model
+{
+    //
+    protected $table = 'config';
+    public $timestamps = false;
+
+    protected $guarded = [];
+    //sama kayak fillabel
+}
