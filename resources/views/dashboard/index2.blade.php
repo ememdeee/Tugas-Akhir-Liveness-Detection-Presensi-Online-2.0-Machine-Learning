@@ -17,7 +17,7 @@
     </div>
 @endif
 
-<p class="fs-1">Untuk mengetahui informasi per-user, lakukan pencarian by name.</p>
+<p class="fs-1 fw-bold">Untuk mengetahui informasi per-user, lakukan pencarian by name.</p>
 
 <div class="badge bg-primary text-wrap mb-3" style="width: 21rem;">
     {{ $date ?? "Masukan Tanggal dan Nama untuk menampilkan hasil!" }}
@@ -121,7 +121,7 @@
         <button type="button" class="btn btn-secondary btn-lg" disabled>Total Absen: {{ $totalAbsen }} kali</button>
     </div>
     @endif
-    <div class="my-4">
+    <div class="mb-4">
         <label class="badge bg-primary text-wrap" style="width: 8rem;" for="tanggal">dari tanggal:</label>
         <input class="form-control" style="width:11rem;" type="date" id="startTanggal" name="startTanggal" required value = "{{old('startTanggal')}}">
         <label class="badge bg-primary text-wrap mt-2" style="width: 8rem;" for="tanggal">sampai tanggal:</label>
@@ -134,7 +134,7 @@
     </div>
 </form>
 
-
+<p class="fs-2 fw-normal">More Setting</p>
 <!-- gantilokasi -->
 <form action="/dashboard2" method="post">
     @csrf

@@ -22,6 +22,7 @@
     @if (session()->has('sudahAbsen'))
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         {{ session ('sudahAbsen') }}
+        <?php session()->forget('sudahAbsen'); ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -29,6 +30,7 @@
     @if (session()->has('lokasiJauh'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session ('lokasiJauh') }}
+        <?php session()->forget('lokasiJauh'); ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -36,6 +38,7 @@
     @if (session()->has('absenMasuk'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session ('absenMasuk') }}
+        <?php session()->forget('absenMasuk'); ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
