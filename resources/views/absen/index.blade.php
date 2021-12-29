@@ -42,6 +42,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+
+    <!-- @if (session()->has('fakelocation'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session ('fakelocation') }}
+        <?php session()->forget('fakelocation'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif -->
     
     <!-- @if (session()->has('jarak'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -56,6 +64,22 @@
         <div id="render_map"> <h4> Map tidak tersedia, pastikan internet anda menyala.</h4></div>
     </div>
 
+    {{-- get true location --}}
+    <!-- <?php
+        $user_ip = getenv('REMOTE_ADDR');
+        $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+        $city = $geo["geoplugin_city"];
+        $region = $geo["geoplugin_regionName"];
+        $country = $geo["geoplugin_countryName"];
+        $lat = $geo["geoplugin_latitude"];
+        $lon = $geo["geoplugin_longitude"];
+        echo "City: ".$city."<br>";
+        echo "Region: ".$region."<br>";
+        echo "Country: ".$country."<br>";
+        echo "lat: ".$lat."<br>";
+        echo "lon: ".$lon."<br>";
+    ?> -->
+
     <!-- barutombol -->
 
     <div class="absen">
@@ -67,6 +91,10 @@
                 <input type="" name="lat" value="0" id="lat">
                 <input type="" name="lon" value="0" id="lon">
                 <input type="" name="jarak" value="{{$jarak ?? 'Tekan absen untuk mengetahui jarak'}}" id="jarak">
+                <br><br>
+                <!-- <p>true location</p>
+                <input type="" name="iplat" value={{$lat}} id="iplat">
+                <input type="" name="iplon" value={{$lon}} id="iplon"> -->
             </div>
         </form>
     </div>
@@ -144,7 +172,7 @@
                     L.latLng(USER_COORD[0],USER_COORD[1])
                     ],draggableWaypoints: false,
                     routeWhileDragging: false
-                    }).addTo(Map);
+                    }).addTo(Map); 
 
             //marker lama (no line)
             // const MarkerToko = L.marker((DEFAULT_COORD),{icon:custom_icon}).addTo(Map) //icon berhasil

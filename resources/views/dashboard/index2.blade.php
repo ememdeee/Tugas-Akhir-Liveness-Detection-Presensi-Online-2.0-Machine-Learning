@@ -6,6 +6,7 @@
 @if(session()->has('nameError'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{ session ('nameError') }}
+    <?php session()->forget('nameError'); ?>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
@@ -13,6 +14,7 @@
 @if (session()->has('gantiLok'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session ('gantiLok') }}
+        <?php session()->forget('gantiLok'); ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
@@ -118,7 +120,7 @@
             @endforeach
         </table>
         <button type="button" class="btn btn-lg btn-primary" disabled>Total Jam: {{ floor($totalJam/3600) }} jam, {{floor(fmod($totalJam,3600)/60)}} menit, {{fmod($totalJam,60)}} detik</button>
-        <button type="button" class="btn btn-secondary btn-lg" disabled>Total Absen: {{ $totalAbsen }} kali</button>
+        <button type="button" class="btn btn-secondary btn-lg" disabled>Total Tidak Absen: {{ $totalAbsen }} kali</button>
     </div>
     @endif
     <div class="mb-4">
@@ -154,7 +156,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Perubahan Lokasi</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

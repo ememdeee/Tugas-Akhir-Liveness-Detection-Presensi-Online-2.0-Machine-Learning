@@ -34,6 +34,18 @@ class AbsenController extends Controller
             'lon' => $request['lon'],
         ]);
 
+        // new
+        // $lokasiTrue = collect([
+        //     'lat' => $request['iplat'],
+        //     'lon' => $request['iplon'],
+        // ]);
+        
+        // if ($lokasiUser['lat'] != $lokasiTrue['lat']){
+        //     $request->session()->flash('fakelocation','You are detected using fake location!');
+        //     return view("absen.index");
+        // }
+        // new, until here
+
         $jarak = $this->hitungJarak($lokasiUser);
 
         //mengecek jarak antar user
