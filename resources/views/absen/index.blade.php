@@ -30,7 +30,7 @@
     @if (session()->has('lokasiJauh'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session ('lokasiJauh') }}
-        <?php session()->forget('lokasiJauh'); ?>
+        <?php session()->forget('lokasiJauh');?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -39,6 +39,22 @@
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session ('absenMasuk') }}
         <?php session()->forget('absenMasuk'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    @if (session()->has('livenessDetectionBerhasil'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session ('livenessDetectionBerhasil') }}
+        <?php session()->forget('livenessDetectionBerhasil'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    @if (session()->has('livenessDetectionGagal'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session ('livenessDetectionGagal') }}
+        <?php session()->forget('livenessDetectionGagal'); ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -95,6 +111,7 @@
                 <!-- <p>true location</p>
                 <input type="" name="iplat" value={{$lat}} id="iplat">
                 <input type="" name="iplon" value={{$lon}} id="iplon"> -->
+                <input type="" name="nama" value="{{ auth()->user()->name }}" id="jarak">
             </div>
         </form>
     </div>

@@ -7,6 +7,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dashboard2Controller;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\FacedetectionController;
+use App\Http\Controllers\Livenessdetection;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +64,18 @@ Route::post('/dashboard', [DashboardController::class, 'pilihTanggal'])->middlew
 Route::get('/dashboard2', [Dashboard2Controller::class, 'index'])->middleware(['auth','role:admin']);
 Route::post('/dashboard2', [Dashboard2Controller::class, 'pilihUser'])->middleware(['auth','role:admin']);
 
+
+Route::get('/facedetection', [FacedetectionController::class, 'index']);
+
 //upload ke git hub atau update
 // git add .
 // git commit -m "First commit"
 // git push
+
+
+
+//halaman liveness detection
+
+
+Route::get('/livenessdetection', [Livenessdetection::class, 'index']);
+Route::post('/livenessdetection', [Livenessdetection::class, 'cekdatadiri']);
