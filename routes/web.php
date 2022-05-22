@@ -9,6 +9,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\FacedetectionController;
 use App\Http\Controllers\Livenessdetection;
+use App\Http\Controllers\LivenessdetectionUi;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,4 @@ Route::get('/facedetection', [FacedetectionController::class, 'index']);
 
 Route::get('/livenessdetection', [Livenessdetection::class, 'index']);
 Route::post('/livenessdetection', [Livenessdetection::class, 'cekdatadiri']);
+Route::get('/livenessdetectionUi', [LivenessdetectionUi::class, 'index']);

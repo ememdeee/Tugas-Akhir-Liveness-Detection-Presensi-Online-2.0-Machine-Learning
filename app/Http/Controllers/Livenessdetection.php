@@ -13,7 +13,7 @@ class Livenessdetection extends Controller
 {
     public function index(Request $request){
         // hebatnya ini bakal terdeklarasi hanya jika kita tidak membawa variabel jarak dari sebelumnya
-        // jarak tidak lagi perlu dideklarasikan disini jika, akses ke facedetection hanya bisa melalui halaman abensi.
+        // jarak tidak lagi perlu dideklarasikan disini jika, akses ke facedetection hanya bisa melalui halaman abensi. sudah boleh dihapus harusnya normal.
         $jarak="asd";
         return view('livenessdetection.index',['jarak' => $jarak]);
     }
