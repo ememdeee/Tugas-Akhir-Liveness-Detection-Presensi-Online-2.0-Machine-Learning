@@ -13,7 +13,41 @@ canvas {
   height: auto;
 }
 
+@media (min-width: 992px) {
+  .exprextionDemo{
+    width: 40%;
+    height: auto;
+  }
+}
 
+/* yang dihilangkan */
+#imageUpload{
+  display: none;
+}
+
+#camera{
+  display: none;
+}
+
+#btPic{
+  display: none;
+}
+
+#confirmation{
+  display: none;
+}
+
+.p5Canvas{
+  display: none;
+}
+
+canvas{
+  display: none;
+}
+
+#nama1{
+  display: none;
+}
 /* perbaikan tampilan end hear */
 
 /* Loading screen */

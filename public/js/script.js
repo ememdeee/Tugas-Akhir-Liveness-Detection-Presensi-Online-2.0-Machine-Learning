@@ -29,7 +29,7 @@ async function start() {
   document.body.append(container)
   labeledFaceDescriptors = await loadLabeledImages()
   faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
-  document.body.append('Loaded')
+  // document.body.append('Loaded')
   imageUpload.addEventListener('change', async (e) => {
     console.log('on input change')
     if (image) image.remove()
@@ -109,10 +109,11 @@ video.addEventListener('play', () => {
         if (rand == 4){
           ekspresi= "disgusted";
           disgustedFlag=1;
-      }
-
-      console.log("atas");
-      document.getElementById("demo").innerHTML = ekspresi;
+        }
+        
+        console.log("atas");
+        document.getElementById("demo").innerHTML = ekspresi;
+        document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/"+ekspresi+".png";
       document.getElementById("point").innerHTML = point;
       // countdown, kalau lebih dari waktu yang ditentukan, flag akan kembali 0 dan generate ulang ekspresi
       document.getElementById("countdown").innerHTML = "Do Liveness Detection! (You have 10 seconds)";
@@ -147,7 +148,7 @@ video.addEventListener('play', () => {
       // }
 
       if (happyFlag==1){
-        document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/happy.png";
+        // document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/happy.png";
         if (detections[0].expressions.happy > 0.8) {
           console.log('allah, masuk ke happy')
           happyFlag=0;
@@ -157,7 +158,7 @@ video.addEventListener('play', () => {
         }
       }
       if (surprisedFlag==1){
-        document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/shocked.png";
+        // document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/shocked.png";
         if (detections[0].expressions.surprised > 0.8) {
           console.log('allah, masuk ke surprised')
           surprisedFlag=0;
@@ -167,7 +168,7 @@ video.addEventListener('play', () => {
         }
       }
       if (angryFlag==1){
-        document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/angry.png";
+        // document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/angry.png";
         if (detections[0].expressions.angry > 0.8) {
           console.log('allah, masuk ke angry')
           angryFlag=0;
@@ -177,7 +178,7 @@ video.addEventListener('play', () => {
         }
       }
       if (disgustedFlag==1){
-        document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/disgusted.png"
+        // document.getElementById("exprestionImage").src="https://raw.githubusercontent.com/ememdeee/Face-Recognition-JavaScript/master/exprestionImage/disgusted.png"
         if (detections[0].expressions.disgusted > 0.5) {
           console.log('allah, masuk ke disgusted')
           disgustedFlag=0;

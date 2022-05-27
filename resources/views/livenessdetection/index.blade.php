@@ -102,19 +102,27 @@
         <input type="file" id="imageUpload">
 
         
-        <video id="video" width="720" height="560" autoplay muted></video>
         <!-- <video class="mainCamera" id="video" width="360" height="280" autoplay muted></video> -->
         
-        <H1 class="text-center">Lakukan Ekspresi</H1>
-
+        
         <div class="container px-4">
+          <div class="row gx-5">
+            <div class="col text-center">
+              <video id="video" width="360" height="280" autoplay muted></video>
+            </div>
+          </div>
+          <div class="row gx-5">
+            <div class="col text-center">
+              <H1 class="text-center">Lakukan Ekspresi</H1>
+            </div>
+          </div>
           <div class="row gx-5">
             <div class="col text-center">
               <p id="countdown">Wait, loading models...</p>
               <h3 id="point">Point : 0/5</h3>
               <H2 class="border p-2" id="belum">hasil</H2>
             </div>
-            <div class="col">
+            <div class="col text-center">
               <image id="exprestionImage" class="exprextionDemo border" src="\exprestionImage\loading.png"></image>
               <H2 class="text-center" id="demo">ekspresi</H2>
             </div>
@@ -136,7 +144,7 @@
   <!-- END -->
 
 
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" id="confirmation">
             <!-- <div class="col-md-5 p-lg-5 mx-auto my-5">
             @if(Auth::check())
             <h1 class="display-4 fw-normal">Halo, {{auth()->user()->name}}</h1>
@@ -174,26 +182,6 @@
             
 
           </div>
-
-        <!-- <h1>Ini akan jadi halaman perkenalan tentang web ini</h1>
-        <h3>orang pertama kali datang kalau belum login akan ke sini</h3> -->
-
-        yang perlu dilakukan adalah <br>
-        1. masukan liveness detection ke sini yang berhasil sampe step akhir. <br>
-        2. nama user yang ke detek di step akhir liveness detection yaitu Face recognition dimasukan ke dalam input type id:nama dan button ter execute. (selanjutnya udah normal insyaallah!)<br> 
-        yang jika dibandingkan sama dengan nama Real / nama akun yang login, maka proses liveness detection baru sepenuhnya berhasil dan dikirim ke halaman absensi untuk disimpan datanya <br>
-        3. UI/UX dari liveness Detectionnya dibenerkan TERAKHIR aja. <br>
-
-        <br><br><h3>done</h3>
-        <br>
-        controller yang diabsensi ada yang perlu dipindah ke controller liveness detection, karek mindah haruse. bismillah.
-        <br>
-
-        <br>
-
-        Di absensi juga <br>
-        1. Setelah dicek jarak apabila memenuhi, akan dilempar ke halaman liveness detection metode get sepertinya dengan DATA BELUM DISIMPAN TERLEBIH DAHULUS. <br>
-        2.setelah berhasil liveness detection e baru disimpan data absensinya. (ini yang berat, gimana carae cek data yang dipegang disimpan semeptara sek dan blom di fix kan sampek selesai liveness.)
       </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
