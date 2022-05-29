@@ -7,6 +7,12 @@ canvas {
 }
 
 /* perbaikan tampilan start hear */
+.center{
+  text-align: center;
+}
+#video{
+  margin-top: 10px;
+}
 
 .exprextionDemo{
   width: 100%;
@@ -25,13 +31,13 @@ canvas {
   display: none;
 }
 
-#camera{
+/* #camera{
   display: none;
-}
+} */
 
-#btPic{
+/* #btPic{
   display: none;
-}
+} */
 
 #confirmation{
   display: none;

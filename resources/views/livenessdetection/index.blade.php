@@ -80,17 +80,24 @@
           </ul>
           </div>
       </div>
-      </nav>
+    </nav>
+    
+    <!-- LIVENESS Detection -->
+      <script script>
+        var point=0;
+      </script>
+
+      <input type="file" id="imageUpload">
+
+      <div class="center">
+        <video id="video" width="360" height="280" autoplay muted></video>
+      </div>
 
       <div class="container mt-4">
 
         <!-- ----------------------------------------------------------------------------- -->
 
 
-        <!-- LIVENESS Detection -->
-        <script>
-          var point=0;
-        </script>
 
         <!-- yapa carae loading screen ini hilang ketika semua fitur udah ke load -->
         <!-- <div class="loader-wrapper"> -->
@@ -99,18 +106,12 @@
         <!-- </div> -->
 
 
-        <input type="file" id="imageUpload">
 
         
         <!-- <video class="mainCamera" id="video" width="360" height="280" autoplay muted></video> -->
         
         
         <div class="container px-4">
-          <div class="row gx-5">
-            <div class="col text-center">
-              <video id="video" width="360" height="280" autoplay muted></video>
-            </div>
-          </div>
           <div class="row gx-5">
             <div class="col text-center">
               <H1 class="text-center">Lakukan Ekspresi</H1>
@@ -129,7 +130,7 @@
           </div>
         </div>
         
-        <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+        {{-- <div id="camera" style="height:auto;width:auto; text-align:left;"></div> --}}
         
         <script src="js/sketch.js"></script>
         

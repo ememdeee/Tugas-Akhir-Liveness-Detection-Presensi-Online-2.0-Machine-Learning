@@ -229,12 +229,13 @@ function loadLabeledImages() {
 
 // CAMERA SETTINGS.
 Webcam.set({
-  width: 220,
-  height: 190,
+  width: 360,
+  height: 280,
   image_format: 'jpeg',
   jpeg_quality: 100
 });
-Webcam.attach('#camera');
+Webcam.attach('#video');
+console.log("webacm attached");
 
 // SHOW THE SNAPSHOT.
 takeSnapShot = function () {
