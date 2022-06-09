@@ -10,6 +10,9 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\FacedetectionController;
 use App\Http\Controllers\Livenessdetection;
 use App\Http\Controllers\LivenessdetectionUi;
+use App\Http\Controllers\DeteksiEkspresi;
+use App\Http\Controllers\DeteksiObjek;
+use App\Http\Controllers\PengenalanWajah;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +84,9 @@ Route::get('/facedetection', [FacedetectionController::class, 'index']);
 Route::get('/livenessdetection', [Livenessdetection::class, 'index']);
 Route::post('/livenessdetection', [Livenessdetection::class, 'cekdatadiri']);
 Route::get('/livenessdetectionUi', [LivenessdetectionUi::class, 'index']);
+
+
+// pengujian purpose
+Route::get('/deteksiekspresi', [DeteksiEkspresi::class, 'index']);
+Route::get('/deteksiobjek', [DeteksiObjek::class, 'index']);
+Route::get('/pengenalanwajah', [PengenalanWajah::class, 'index']);

@@ -77,7 +77,7 @@
     <!-- Mapdulu -->
 
     <div class="wrapper">
-        <div id="render_map"> <h4> Map tidak tersedia, pastikan internet anda menyala.</h4></div>
+        <div id="render_map"> <h4>Pastikan lokasi dan internet anda menyala..</h4></div>
     </div>
 
     {{-- get true location --}}
