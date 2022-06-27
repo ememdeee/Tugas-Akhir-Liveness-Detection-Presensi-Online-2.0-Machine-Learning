@@ -163,7 +163,7 @@
             </div>
             <div class="product-device shadow-sm d-none d-md-block"></div>
             <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
-            <h1>Halo world, {{ auth()->user()->name }}!</h1>
+            <h1>Halo world, {{ auth()->user()->name ?? 'your-name'}}!</h1>
 
             <form action="/livenessdetection" method="post" id="form">
               @csrf
@@ -171,7 +171,7 @@
               <input type="text" name="nama" id="nama">
               <br>
               <h4>nama akun sebenarnya:</h3>
-              <input type="" name="namaReal" id="namaReal" value="{{auth()->user()->name}}">
+              <input type="" name="namaReal" id="namaReal" value="{{auth()->user()->name ?? 'your-name'}}">
               <br>
               <button class='bg-white text-yellow-50 p-3 rounded-md mx-auto' id="selfclick">Liveness Detection Berhasil</button>
               <h5>Jarak</h5>
