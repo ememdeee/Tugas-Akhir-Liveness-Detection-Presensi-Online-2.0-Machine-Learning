@@ -4,6 +4,6 @@ This is the web-based app that I made for my thesis with the title Liveness Dete
 All the app is available on the website so the employee can use this easily and with all device. The implementation of liveness detection and face recognition on the web is using a Machine Learning library called Tensorflow.js. and for the back end, I am using Laravel Framework.
 
 ## Demo Application
-<center>
+
 https://www.loom.com/share/50b8d813a9cf4f558a137d645e72adb4
-</center>
+
