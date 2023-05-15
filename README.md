@@ -6,7 +6,3 @@ All the app is available on the website so the employee can use this easily and 
 ## Demo Application
 
 https://www.loom.com/share/50b8d813a9cf4f558a137d645e72adb4
-
-## Web Application
-
-<a href="https://mmd.dcare.id">mmd.dacare.id</a>
